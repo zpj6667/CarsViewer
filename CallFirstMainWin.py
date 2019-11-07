@@ -1,25 +1,30 @@
 # -*- coding: utf-8 -*-
+import socket 
+import sys 	
 from PyQt5.QtWidgets import QApplication,  QLineEdit , QWidget ,  QFormLayout, QMainWindow
 from PyQt5.QtGui import QIntValidator , QDoubleValidator , QFont
 from PyQt5.QtCore import Qt
-import socket 
-import sys 	
-from CarsViewer190914 import *
+from PyQt5.QtWidgets import *
+from CarsViewer191026 import *
+from ReadMap import *
+from draw import *
 
 class MyMainWindow(QMainWindow, Ui_CarsViewer):
     def __init__(self, parent=None):    
         super(MyMainWindow, self).__init__(parent)
-        self.setupUi(self) 
-            
+        self.setupUi(self)
+        
 if __name__=="__main__":  
     app = QApplication(sys.argv)  
     myWin = MyMainWindow()  
-    myWin.show()    
-    IPaddress = textchanged(text)
-    print(IPaddress)
-    client = socket.socket()   
-    client.connect(( IPaddress, 19204)) 
-#    logger.info("connected")
-#    master = modbus_tcp.TcpMaster(host="192.168.192.5", port=502)
     
+    
+    
+#    demo=Drawing()
+#    demo.show() #显示点和线
+    myWin.show()  #显示主窗口
+    Mapreading()
+#    Change_Format()  
+#    Get_position_line()
     sys.exit(app.exec_())  
+    
