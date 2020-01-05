@@ -23,8 +23,7 @@ if __name__=="__main__":
 #    demo=Drawing()
 #    demo.show() #显示点和线
     myWin.show()  #显示主窗口
-    Mapreading()
 #    Change_Format()  
-#    Get_position_line()
+    MapReading.Get_position_line()
     sys.exit(app.exec_())  
     
